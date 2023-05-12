@@ -1,6 +1,9 @@
 import React from 'react'
 import NavBar from './components/NavBar'
 import SlideShow from './components/SlideShow'
+import Card from './components/Card'
+
+
 
 
 const images = [
@@ -14,6 +17,8 @@ const App = () => {
     <div>
       <NavBar/>
       <SlideShow images={images} />
+      <Card/>
+      
       
     </div>
   )

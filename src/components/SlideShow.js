@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const SlideShow = ({ images }) => {
+const SlideShow = (props) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(index => (index + 1) % images.length);
+      setIndex((prevIndex) => (prevIndex + 1) % props.images.length);
     }, 3000);
+
     return () => clearInterval(interval);
-  }, [images]);
+  }, []);
 
   return (
     <div>
-      <img src={images[index]} alt="Slideshow" width={'100%'} />
+      <img src={props.images[index]} alt="Slideshow" width={'100%'} />
     </div>
   );
 };
